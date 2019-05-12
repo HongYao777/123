@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            display: inline;/*块级元素转行内元素*/
+        }
+        span{
+            display: block;/*行内元素转块级元素*/
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        a{
+            width: 100px;
+            height: 100px;
+            background-color: #0f00f0;
+            display: inline-block;/*将其他元素转化为行内块元素*/
+        }
+    </style>
+</head>
+<body>
+    <div>abcdef</div>
+    <div>123243</div>
+    <span>行内</span>
+    <span>行内</span>
+    <a href="#">sina</a>
+    <a href="3">sina</a>
+</body>
+</html>
