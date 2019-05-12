@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /**/
+        li:first-child{
+            color: blue;
+        }
+        li:last-child{
+            color: green;
+        }
+        li:nth-child(2){
+            color: yellow;
+        } 
+
+        /*n   0  1  2  li编号从1开始编号*/
+        li:nth-child(2n){
+            color: skyblue;
+        }
+         /*odd奇数*/
+         li:nth-child(odd){
+             font-size: 20px;
+         }
+
+         /*even 偶数*/
+         li:nth-child(even){
+             font-size: 30px；
+         }
+
+         /*最后一个开始数*/
+         li:nth-last-child(even){
+             color: red;
+         }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>aaaaaa</li>
+        <li>bbbbbbb</li>
+        <li>cccccccc</li>
+        <li>dddddddd</li>
+        <li>eeeeeeee</li>
+        <li>fffffff</li>
+    </ul>
+</body>
+</html>
