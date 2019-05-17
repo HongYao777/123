@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "CSS"
+		},
+		{
+			"name": "learngit",
+			"path": "C:\\Users\\Administrator\\learngit"
+		}
+	],
+	"settings": {
+		"open-in-browser.default": "chrome",
+		"liveServer.settings.multiRootWorkspaceName": "CSS"
+	}
+}
