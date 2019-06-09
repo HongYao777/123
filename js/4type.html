@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* var a = 10;
+        var b = 12.3;
+        var c = 1,d = 0;
+        var f = "haha";
+        var g = "10";
+        var m = true;
+        var n = false;
+        
+       var x;
+        console.log(typeof x);//未赋值变量  此时x的值和类型都是undefined
+        */
+       //parseInt()字符串=>数字 把字符串中第一个非数字的之前转化为数字
+       console.log(parseInt("123"));//123
+       console.log(parseInt("123db"));//123
+       console.log("zx123db");//NaN not a number 无法表示的数字
+       console.log(parseInt("1u23db"));//1
+       console.log(parseInt("1.23"));//1
+       console.log(typeof NaN);
+       console.log("---------------")
+       //parseInt()字符串=>数字 把字符串中第一个非数字的之前转化为数字
+       console.log(parseInt("123"));//123
+       console.log(parseInt("123db"));//123
+       console.log("zx123db");//NaN not a number 无法表示的数字
+       console.log(parseInt("1u23db"));//1
+       console.log(parseInt("1.23"));//1
+       console.log("---------------");
+       //Number()其它类型数字=>数字  字符串的话会把纯数字的字符串转化为数字
+       console.log(Number("24.56aaa"));//NaN
+       console.log(Number("24.56"));//24.56
+       console.log(Number("24"));//24
+       console.log(Number(true));//1
+       console.log(Number(false));//0
+       console.log("---------------");
+       //Boolean（）其他类型=>Boolean  非空字符串（包括空格）是true 数字0为false
+        console.log(Boolean("asd"));//true
+        console.log(Boolean(" "));//true
+        console.log(Boolean(""));//false
+        console.lsog(Boolean("13asd"));//true
+        console.log(Boolean("45"));//true
+        console.log(Boolean("0"));//false
+        console.log(Boolean("-132"));//true
+
+        var a = 10;
+        var res = a.toString(2);//把其他转化为2/8/10/16进制
+
+
+
+
+    </script>
+</body>  
+</html>

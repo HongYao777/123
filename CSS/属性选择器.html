@@ -14,6 +14,20 @@
         input[type=text] {
             color: blue;
         }
+        /*^= 以什么开头*/
+        div[class^=font]{
+            color: pink;
+        }
+
+        /*  &= 以什么结尾  */
+        div[class$=footer]{
+            color: red;
+        }
+
+        /*  *= 包含有  */
+        div[class*=tb]{
+            color: green;
+        }
     </style>
 </head>
 <body>
@@ -24,5 +38,22 @@
 
     <input type="text" value="输入用户名">
     <input type="submit " value="输入密码">
+
+    <div class="font12">属性选择器</div>  <!--  div{属性选择器}*6  -->
+    <div class="font12">属性选择器</div>
+    <div class="font24">属性选择器</div>
+    <div class="font24">属性选择器</div>
+    <div class="font12">属性选择器</div>
+    <div class="24font">属性选择器</div>
+
+    <div class="suv-footer">属性选择器</div>
+    <div class="main-footer">属性选择器</div>
+    <div class="font12">属性选择器</div>
+    <div class="24font">属性选择器</div>
+
+    <div class="news-tb-nav">属性选择器</div>
+    <div class="tb-nav">属性选择器</div>
+
+    
 </body>
 </html>
