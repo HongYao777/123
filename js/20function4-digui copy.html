@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //递归
+        //1+2+3+4+5+6+...+100  前100项和
+        function getSum (n) {
+            var sum =0;
+            for(var i=1; i<=n; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        
+
+        //前n项和 == 前n-1项+n
+        function getSum2(n) {
+            /*递归结束条件*/
+            if(n===1) {
+                return 1;
+            }
+            return getSum2(n-1)+n; // 阶乘 return getSum2(n-1)*n;
+            //n=100  getSum2(99)+100=getSum(98)+99+100=....=getSum2(1)+2+...+99+100
+        }
+        //console.log(getSum(100));
+        console.log(getSum2(100));
+
+        // 前n项偶数和
+        function getSum3(n) {
+            /*递归结束条件*/
+            if(n===2) {
+                return 2;
+            }
+            return getSum3(n-2)+n; 
+            
+        }
+        console.log(getSum3(100));
+
+        /*
+            斐波那契数列  从第三个数开始，是前两个数的和
+            0 1 1 2 3 5 8 ...
+            输出第n项
+        */
+        function fnFB(n) {
+            if(n==1) {
+                return 0;
+            }else if(n==2) {
+                return 1;
+            }
+            return fnFB(n-1)+fnFB(n-2);
+        }
+        console.log(fnFB(8));
+
+    </script>
+</body>
+</html>

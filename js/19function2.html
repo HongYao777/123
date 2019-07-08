@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid#000000;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+                <td></td>
+                <td></td>
+            </tr>
+    </table>
+    -->
+    <script>
+        // 定义一个函数  打印m*n 表格
+        function printTable(m, n) {
+            document.write("<table>");
+            for (var i = 1; i <= m; i++) {
+                document.write("<tr>");
+                for (var j = 1; j <= n; j++) {
+                    document.write("<td>asas</td>");
+                }
+                document.write("<tr>");
+            }
+            document.write("</table>");
+        }
+        /*
+        printTable(3,3);
+        pringTable(4,3);
+        */
+        var m = parseInt(prompt("请输入行数")); //形参和实参可设置相同
+        var n = parseInt(prompt("请输入列数"));
+        printTable(m, n);
+
+        //函数实现 输出1-100中 除了7的倍数和带7的数 (传参实现)
+        // 17 27 .... 77 70 71....parseInt(i/10)
+        function printNumber(a, b) {
+            for (var i = a; i <= b; i++) {
+                
+                if(i%7===0 || i%10===7 || parseInt(i/10)===7) {
+
+                }else{
+                    console.log(i);
+                }
+                
+                /*
+                if (i % 7 === 0 || i % 10 === 7 || parseInt(i / 10) === 7) {
+                    continue;
+                } 
+                    console.log(i);
+                */
+            }
+        }
+        printNumber(1, 100);
+
+    </script>
+</body>
+
+</html>

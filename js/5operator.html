@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  + 除了表示加法外 还表示字符串的拼接
+        //  当字符串参与的+运算  +表示字符串拼接  会把非字符串数据自动转成字符串后拼接
+        var x = 10;
+        var y = 20;
+        console.log(x+y);
+        var num1 = "10";
+        num1 = num1 +2; //"102"
+        alert(num1);
+        var x = 20;
+        x = x + ""; //数字转字符串
+        console.log(x,typeof x);
+        console.log("20"+20);
+
+        console.log("45"-"34");//11
+        console.log("45"-"34dsl");//NaN
+        console.log("45"-true);//44
+        conssle.log("11"*3);//33
+        console.log(15/2);
+
+        /*
+            ++ 自增运算符  作用让变量在原来的基础上加1
+            num++ 与 ++num 区别
+            1 共同的   最终都会让num加1
+            2 区别   当参与运算时
+                ++num整个结果是用num加1后的值
+                unm++整个结果是用num的初始值
+        */
+        var num = 10;
+        var num2;
+        //num = num + 1;
+        //num++;
+        //num2 = ++num;
+        num2 =num++;
+        console.log(num);//11
+        console.log(num2);//10
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //计算某一日是这年的第几天 2019 12 4
+        /*
+            2019 3 4  
+            累加对应月份前几个月的天数
+        */
+        var year = parseInt(prompt("请输入年份"));
+        var month = parseInt(prompt("请输入月份"));
+        var day = parseInt(prompt("请输入日期"));
+        var sum = 0;  //存储最终的总天数
+         /*
+            if(month===1){
+                sum = sum + day;  //sum += day;
+            }else if(month===2){
+                sum = 31+day;
+            }else if(...){
+
+            }
+         */
+        switch(month) {
+            case 12:  //前11个月总天使
+                sum += 30;  //五 break 穿透 
+            case 11:
+                sum += 31;
+            case 10:
+                sum += 31;
+            case 9:
+                sum += 30;
+            case 8:
+                sum += 31;
+            case 7:
+                sum += 31;
+            case 6:
+                sum += 30;
+            case 5:
+                sum += 31;
+            case 4:
+                sum += 30;
+            case 3:
+                ((year%400===0)||(year%4===0&&year%100!==0))?sum+=29:sum+=28;
+            case 2:
+                sum += 31;
+            case 1:
+                sum += day;
+
+        }
+        alert("这一天是这年的第"+sum +"天");
+    </script>
+</body>
+</html>

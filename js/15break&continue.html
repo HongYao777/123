@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // break
+        //打印1-100 遇到既是5的倍数又是7的倍数停止打印
+        /*var i = 1;
+        while(i<=100) {
+            //判断
+            if(i%5===0 && i%7===0) {
+                break; //终止循环
+            }
+            console.log(i);
+            i++;
+        }
+        */
+       //打印1-100 跳过既是5的倍数又是7的倍数打印
+       var i = 1;
+        while(i<=100) {
+            //判断
+            if(i%5===0 && i%7===0) {
+                i++;
+                continue; //本次循环结束  继续下一次
+            }
+            console.log(i);
+            i++;
+        }
+        /*
+           一个加油站为了鼓励车主多加油，所以加的多有优惠。（嵌套）
+		92 号汽油，每升 6 元；如果大于等于 20升，那么每升 5.9 ；
+		97 号汽油，每升 7 元；如果大于等于 30升，那么每升 6.95
+		编写 JS 程序，用户输入自己的汽油编号，然后输入自己加多少升，弹出价格。
+        */
+
+        var type = parseInt(prompt("请输入汽油类型92 or 97"));
+        //一直提示输入 知道输入正确的数字位置
+        while(true) {
+            if(type === 92 || type === 95) {
+                break;
+            }
+            type  = parseInt(prompt("请输入汽油类型92 or 97"))
+        }
+        //计算
+        var litre = parseFloat(prompt("请输入汽油升数"));
+        var total = 0;
+        if(type === 92) {
+            if (litre >= 20) {
+                total = 5.9*litre;
+            }else {
+                total = 6*litre;
+            }
+        }else if(type === 95) {
+            if(litre >= 30) {
+                total = 6.95*litre;
+            }else {
+                total = 7*litre;
+            }
+        }
+        alert("你需要支付"+total+"元")
+    </script>
+</body>
+</html>

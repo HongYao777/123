@@ -48,8 +48,11 @@
     while/for/do-while 
 
   ### 函数
-
-
+      系统函数  Math.pow(2,3); alert(); log();  prompt(); ....
+      自定义函数
+      函数递归  函数自己调用自己
+      es6(ECMAScript)  es3/es5/es6
+      babel es6->es5
   ### 对象  
   1. 数组        
 

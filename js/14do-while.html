@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        do {
+            循环体
+        } while (条件)
+
+        先执行循环体，然后判断条件，条件为true 继续执行循环体 。。。直到条件为false循环结束
+
+        while  VS   do-while
+        do-while的循环体至少执行一次
+        while循环体可能一次也不执行
+    */
+    //求0+1+2+3...+100
+    var sum = 0; //sum存储最终结果
+    var i = 1;  //加数   循环变量
+    /*
+    while(i<=100) {
+        sum = sum + i; // sum += i
+        i++;
+    }
+    */
+   do {
+       //循环体
+        sum = sum + i; // sum += i
+        i++;
+   } while (i<=100);
+    alert(sum);
+</script>
+</body>
+</html>
