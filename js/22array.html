@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        为什么需要数组？
+        var age = 18;
+        age = 17;
+        console.log(age); //17 age只能保存最终的值
+        */
+        // 数组  一组相关联的数据的集合
+        var arr = []; // 数组直接量   空数组
+        var arr2 = [1, 3, 5, 7]; //数组存放了四个元素   数组之间用逗号隔开
+        var arr3 = [10, "hello",true]; //js数组元素类型可以不一样
+
+        /*通过new方式创建一个数组对象
+        var arr4 = new Array(); //arr4 = []   Array 构造函数(对象)
+        var arr4 = new Array(5); //arr4数组有5个元素  [undefined,undefined....]
+        var arr4 = new Array(5,2); //5和2是元素  arr4=[5,2]
+        */
+
+        //length  数组的长度及数组元素个数
+        console.log(arr.length); //0
+        console.log(arr2.length); //4
+        console.log(arr3.length); //3
+        arr3.length = 1; //改变数组长度
+        console.log(arr3.length); //1
+        console.log(arr3,arr2); //[10]  [1, 3, 5, 7]
+
+
+    </script>
+</body>
+
+</html>

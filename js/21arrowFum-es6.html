@@ -22,6 +22,73 @@
             //
         }
 
+        /*
+        一般函数
+        function fun() {
+            alert("hehe");
+        }
+        fun();
+        */
+
+
+        /*函数表达式  也是一种定义函数的方式
+                特点 必须定义 后调用
+        var fun = function() {
+            alert("hehe");
+        }
+        fun();
+        */
+
+        //箭头函数   用箭头把小括号与函数体连接起来
+        /*var fun = () => {
+            alert("hehe");
+        }
+        fun();
+        */
+
+        /*
+        function fun2(a) {
+            console.log(11);
+        }
+        */
+
+        //当函数形参只有一个情况下  小括号可以省略
+        /*
+        var fun2 = a =>{
+            console.log(a);
+        }
+        fun2(12);
+        */
+
+
+        /*
+        var fun3 = (a,b)=>{
+            return a + b;
+        }
+        */
+
+        //当函数体只有一条return语句  可以省略大括号以及return
+        /*
+        var fun3 = (a,b)=>a + b;
+        var sun  = fun3(1,2);
+        console.log(sun);
+        */
+
+        /*
+        var fun4 = function(a,b) {
+            return console.log(a+b); //1 控制台输出a+b的和  2 返回undefined
+        }
+        */
+
+        var fun4 = (a,b)=>console.log(a+b);
+        fun4(6,8);
+
+        console.log(fun4.name);
+
+        var fn = function fun5(){}
+        console.log(fn.name);
+    
+
 
     </script>
 </body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [0,10,20,30,40,50];
+        console.log(arr[0]); //访问数组元素  数组名[角标]  角标/下表/索引 0~length-1
+        console.log(arr[3]);
+
+        //输出数组中所有的元素  数组遍历 
+        for(var i=0; i<arr.length; i++) {
+            console.log(arr[i]);
+        }
+        //执行时会每次求一次数组长度
+
+        //优化版
+        for(var i=0, len=arr.length; i<len; i++) {
+            console.log(arr[i]);
+        }
+
+        // for in 可以遍历数组和对象(数组也是对象)
+        for(var i in arr) {
+            //console.log(i); // i 为数组元素的角标
+            console.log(arr[i]);
+        }
+
+        // es6新增  for of 可以遍历数组对象
+        for(var i of arr) {
+            console.log(i); // i 为数组元素
+            
+        }
+    </script>
+</body>
+</html>
