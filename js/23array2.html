@@ -8,6 +8,7 @@
 </head>
 <body>
     <script>
+        /*
         var arr = [0,10,20,30,40,50];
         console.log(arr[0]); //访问数组元素  数组名[角标]  角标/下表/索引 0~length-1
         console.log(arr[3]);
@@ -33,7 +34,48 @@
         for(var i of arr) {
             console.log(i); // i 为数组元素
             
+        }*/
+
+        //计算数组中所有偶数和 奇数和 以及奇数分数 偶数个数
+        function getComputed(arr) {
+            var oddSum = 0, oddCount = 0;
+            var evenSum = 0, evenCount = 0;
+            for(var i=0; i<arr.length; i++) {
+                if(arr[i]%2) {
+                    oddSum +=arr[i];
+                    oddCount++;
+                } else {
+                    evenSum +=arr[i];
+                    evenCount++;
+                }
+            }
+            return [evenSum,oddSum,oddCount,evenCount];
         }
+
+        var arr = [13,56,17,32,34];
+        var res = getComputed(arr);  // [122, 30, 2, 3]
+        console.log(res);
+
+        // 计算数组中最大值和最小值
+        function getValue(arr) {
+            var max = arr[0];
+            var min = arr[0];
+            for(var i=1; i<arr.length; i++) {
+                if(arr[i] > max) {
+                    max = arr[i];
+                }
+                if(arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            return [max,min];
+        }
+        console.log(getValue(arr));
+        
+
+        // 练习 1 定义一个数组  存放5个数字 输出这5个数字 求出平均值
+        // 练习 2 输出数组中素数个数  (函数+数组)
+        // 练习 3 arr = [12,32] 输出交换后的数组 
     </script>
 </body>
 </html>
