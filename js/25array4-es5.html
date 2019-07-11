@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // forEach() 数组遍历
+        var arr = [11,3,56,34,100,9,100];
+        /*
+        arr.forEach(function(item,index) {
+            console.log(index+"-"+item); // index 角标/索引  item  数组中元素的值
+        });
+        */
+        arr.forEach((item,index) => {
+            //console.log(index+"-"+item);
+            if(item%2===0) {
+                console.log(item);
+            }
+        });
+        //求上述数组最大值
+        var max = arr[0];
+        arr.forEach((item) => {
+            if(item>max) {
+                max = item;
+            }
+        });
+        console.log(max); //100
+
+
+        //indexOf() 查找元素在数组中第一次出现的索引 假如不存在返回-1
+        var index = arr.indexOf(100); //从左往右找
+        //var index = arr.IndexOf(200);// -1
+        var index2 = arr.lastIndexOf(100); //从右往左找
+        console.log(index); //4
+        console.log(index2); //6
+
+        //对数组去重
+        function noRepeat(arr) {
+            var newArr = [];
+            //对arr循环 每一次拿到元素 判断是否在newArr中 没有加到newArr中
+            arr.forEach((item)=>{
+                if(newArr.indexOf(item) === -1) {
+                    newArr.push(item);
+                }
+            });
+            return newArr;
+        }
+        console.log(noRepeat(arr)); //[11, 3, 56, 34, 100, 9]
+    </script>
+</body>
+</html>
