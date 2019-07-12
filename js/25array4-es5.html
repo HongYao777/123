@@ -50,6 +50,58 @@
             return newArr;
         }
         console.log(noRepeat(arr)); //[11, 3, 56, 34, 100, 9]
+
+        //map(映射)  filter(过滤)  reduce some  every  都会产生新数组  原数组不会发生改变
+        var array = [12,14,5,6,32,10];
+        /*var newArr = array.map((item,index)=>{
+            return item*1.2; //必须要有返回值
+        });
+        */
+
+        // filter 过滤 有函数值返回值为true的元素所组成
+        /*var newArr = array.filter((item,index)=>{
+            //return item%2; // 5
+            return item>12;
+        });
+        */
+
+        //reduce 收敛
+        /*
+            第一次  prev 12     next  14
+            第一次  prev undefined  next  5
+            第一次  prev undefined  next  6
+            ...
+            
+            从第二个开始的prev  是上一次的函数返回值
+        */
+       var sum = array.reduce((prev,next)=>{
+           console.log(prev+"---"+next);
+           return prev+next;  //求数组元素之和
+       });
+       // 当reduce传入第二个参数 第一个的prev指向第二个参数
+       var sum2 = array.reduce((prev,next)=>{
+           console.log(prev+"---"+next);
+           return prev+next;
+        },6); 
+        console.log(sum2);
+        //console.log(newArr,array);
+
+        // some 返回true/false;
+        var arr2 = [10,,4,5,6,11,20];
+        var res = arr2.some((item)=>{
+            console.log(item);
+            return item>100;
+        });
+        console.log(res); // true
+        console.log("-----------------");
+
+
+        // every  知道第一个为false停止循环  否则返回true
+        var res2 = arr2.every((item)=>{
+            console.log(item);
+            return item>10;
+        });
+        console.log(res2); // 10  false
     </script>
 </body>
 </html>
