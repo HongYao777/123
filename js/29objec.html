@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 描述一个人的信息
+        var name = "along";
+        var sex = "M";
+        var age = 32;
+        //  liwei
+        var name  = "liwei";
+        var sex2 = "M";
+        var age2 = 33; 
+        console.log(name);
+        // 对象  具体的事物或者抽象的事件
+        // 对象定义 无序属性的集合
+        /*  键值对 直接量
+            var obj = {
+                k:v,
+                k:v
+                ...
+            }        
+        */
+        var p1 = {
+            name:"along", // 属性------特征
+            sex: "M",  //静态属性
+            age: 32,
+            teach: function() { // 方法-----动态属性
+                console.log("hard workiong");
+            }
+        };
+        var p2 = {
+            name:"liwei", // 属性------特征
+            sex: "M",
+            age: 33
+        }
+        console.log(p1,typeof p1); // object
+        console.log(p2);
+        // 访问对象的成员 对象.成员 
+        console.log(p1.age);
+        console.log(p1['age']);
+        var k = 'sex';
+        console.log(p1[k]); // p1['sex'] p1.k
+        p1.teach();
+        
+        // 对象可以动态添加属性
+        p1.tel = "13988888888";
+        console.log(p1);
+        p1.sing = function() {
+            console.log("along is singing");
+        }
+        p1.sing(); // window.sing()
+
+
+        function fn() {
+
+        }
+
+        fn(); // window.fn();
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // es6 新增表达式 --> 解构赋值  数组/对象  解析数组或对象的结构为不同变量提取值
+        //var name = "along";
+        //var age = 32;
+        var [name,age] = ["along",32];
+        console.log(name);
+        console.log(age);
+        var [x,y,z]  = [1,[2.2,2.3]]; //数组的嵌套
+        // let [x,y,z]  = [1,[2.2,2.3]]; // let 
+        //console.log(x,y,z); //  1  [2.2,2.3]  undefined
+        //var [x,[y,z]] = [1,[2.2,2.3]];    
+        
+        var [json,arr,num] = [{a:10,b:20},[1,2,3],10]; //[对象  {数组}  数字]
+
+        var [,,x=4] = [1,2,3];
+        console.log(x); // 3
+
+        //默认值
+        var [,,x=4] = [1,2];
+        console.log(x); // 4
+
+        // 剩余参数
+        var [x,...y] = [10,20,30,40];  //剩余项   把剩下的值全给y  ...y只能至于末尾
+        console.log(x,y); //10  [20, 30, 40]
+
+        //数组克隆
+        var arr = [1,2,3];
+        var [...arr1] = arr; 
+        console.log(arr1); //[1, 2, 3]
+
+        // 交换变量值
+        /*var x = 10,  y = 20;
+        var temp = x;
+        x = y;
+        y = temp;
+        */
+        [x,y] = [y,x];
+        console.log(x,y);
+
+
+    </script>
+</body>
+</html>

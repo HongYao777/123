@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [12, 5, 4, 6, 11, 9];
+        /* 升序
+          冒泡排序 --- 双重for循环
+           12,5,4,6
+           第一轮 比较3次 得到最大值
+           5 12 4 6
+           5 4  12 6
+           5 4  6  12 
+           第二轮 5 4 6 比较2次 得到第二大的值
+           4 5 6 12  
+           4 5 6 12 
+           第三轮 比较1次 得到第三大的值
+           4 5 
+ 
+            i      j
+            0      3       0～1 1～2 2～3 
+            1      2       0～1 1～2
+            ..    arr.length-1-i
+ 
+        */
+        // 定义循环 控制轮数
+        var temp = 0;
+        for (var i = 0; i < arr.length - 1; i++) {
+            // 每一轮 进行比较若干次 0 1 2 
+            for (j = 0; j < arr.length - 1 - i; j++) {
+                // 相邻两数比较
+                if (arr[j] > arr[j + 1]) {
+                    //if (arr[j] > arr[j + 1]) {  // 降序
+                    /*
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    */
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                }
+            }
+        }
+        console.log(arr);
+
+    // 选择排序  双重for循环
+          /* 升序
+            12,5,4,6
+            5 12 4 6
+            4 12 5 6 
+          */
+        
+
+    </script>
+</body>
+
+</html>
