@@ -21,7 +21,7 @@
         // 对象定义 无序属性的集合
         /*  键值对 直接量
             var obj = {
-                k:v,
+                k:v,     // key:value
                 k:v
                 ...
             }        
@@ -30,7 +30,7 @@
             name:"along", // 属性------特征
             sex: "M",  //静态属性
             age: 32,
-            teach: function() { // 方法-----动态属性
+            teach: function() { // 方法/函数-----动态属性
                 console.log("hard workiong");
             }
         };
@@ -42,8 +42,8 @@
         console.log(p1,typeof p1); // object
         console.log(p2);
         // 访问对象的成员 对象.成员 
-        console.log(p1.age);
-        console.log(p1['age']);
+        console.log(p1.age);    // age为属性名
+        console.log(p1['age']);  // 中括号内必须加引号  不加视作变量名
         var k = 'sex';
         console.log(p1[k]); // p1['sex'] p1.k
         p1.teach();
@@ -54,7 +54,7 @@
         p1.sing = function() {
             console.log("along is singing");
         }
-        p1.sing(); // window.sing()
+        p1.sing(); // window.sing() 前缀去掉之后变为全局
 
 
         function fn() {
