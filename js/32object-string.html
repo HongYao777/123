@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        var str = "hello"; //双引号
+        var str2 = '123'; // 或者单引号
+        */
+        function fnCharAt() {
+            var str = "abghhdhadjk123";
+            var ch = str.charAt(0); // (序号从0开始) 返回对应位置的字符
+            //美国标准信息交换码
+            var code = str.charCodeAt(1); // 98  返回对应位置的字符编码 a 97   A 65  0 48
+            var ch2 = String.fromCharCode(99); // 返回编码对应的字符  String为js提供的构造函数 
+            console.log(ch);
+            console.log(code);
+            console.log(ch2);
+        }
+        fnCharAt();
+
+        // 找索引
+        function fnIndexof() {
+            var str = "heillwoer23kk";
+            var index = str.indexOf('l');
+            // var index = str.lastIndexOf('l'); // 从后往前找
+            console.log(index); // 没有为 -1
+        }
+        fnIndexof();
+
+
+        // 截取
+        function fnSubstr() {
+            var str = "welcome to china";
+            var res = str.substr(3); //从序号3开始 截取到最后
+            var res2 = str.substr(3,7); // 从序号3开始 截取7个长度的字符
+            var res3 = str.substring(3); //从序号3开始 截取到最后
+            var res4 = str.substring(3,7);//从序号3开始 截取到第7位 但不包括7 (会自动比较两个参数的大小)
+            console.log(res); // come to china
+            console.log(res2); // come to
+            console.log(res3); // come to china
+            console.log(res4); // come
+        }
+        fnSubstr();
+
+
+        function fn() {
+
+        }
+
+        fn.add = function () {
+            console.log("add");
+        }
+
+        fn.add();
+    </script>
+</body>
+
+</html>

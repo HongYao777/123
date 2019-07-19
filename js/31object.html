@@ -13,17 +13,21 @@
         num = 20;
         console.log(num2); //10
 
-        //引用类型
+        //引用类型之对象
         var obj = {name: "along"};
         var obj2 = obj;
         obj.name = "along666";
         console.log(obj2.name);
 
+        //引用类型之数组
         var arr = [10,20,30];
         var brr = arr;
         brr[0] = 100;
-        console.log(arr); //arr[100,20,30]
+        console.log([0]); // 100
 
+        // arr[100,20,30]
+
+        //引用类型之函数
         function fn(brr) {
             brr[0]--;
         }
