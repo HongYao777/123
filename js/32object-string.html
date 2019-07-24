@@ -10,6 +10,7 @@
 
 <body>
     <script>
+        // es6 模板字符串
         /*
         var str = "hello"; //双引号
         var str2 = '123'; // 或者单引号
@@ -43,12 +44,42 @@
             var res2 = str.substr(3,7); // 从序号3开始 截取7个长度的字符
             var res3 = str.substring(3); //从序号3开始 截取到最后
             var res4 = str.substring(3,7);//从序号3开始 截取到第7位 但不包括7 (会自动比较两个参数的大小)
+            var res5 = str.slice(3);//从序号3开始 截取到最后
+            var res6 = str.slice(3,7);//从序号3开始 截取到第7位 但不包括7(交换位置后不会比较两个参数的大小)
             console.log(res); // come to china
-            console.log(res2); // come to
+            console.log(res2); // come to 
             console.log(res3); // come to china
             console.log(res4); // come
+            console.log(res6);
         }
         fnSubstr();
+
+
+        // 分割
+        function fnSplit() {
+            var str = "welcome to china";
+            var arr = str.split(" "); // 以空格拆分
+            str = arr.join(" "); //以空格拼接
+            console.log(arr,str);
+            
+            var filename = "1.4.2.txt";
+            var res = filename.split(".");
+            var extname = res[res.lenth-1];
+            console.log(extname);
+            // 1 "http://www.baidu.com?uname=zs&age=22"  如何获取uname和age
+            // 2 "abcdefg" => "gfedcba"  先数组         
+        }
+        fnSplit();
+
+        // 替换
+        function fnReplace() {
+            var  str = "nnd 大家好 nnd 我是"; 
+            //str = str.replace('nnd',"***"); // 惰性 只会找到第一个 可用正则表达式
+            console.log(str.slice("nnd")); //["", " 大家好","我是"]
+            str = str.split("nnd").join("*");
+            console.log(str);
+        }
+        fnReplace();
 
 
         function fn() {

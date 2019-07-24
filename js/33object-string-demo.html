@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 "http://www.baidu.com?uname=zs&age=22"  如何获取uname和age
+        // 2 "abcdefg" => "gfedcba"  先数组 
+
+        var url = "http://www.baidu.com?uname=zs&age=22";
+        var data = url.split("?")[1]; //"uname=zs&age=22"
+        var arr = data.split("&"); //["uname=zs","age=22"]
+        var [,uname] = arr[0].split("="); //["uname","zs"]
+        var [,age] = arr[1].split("=");
+        console.log(uname,age);
+
+        var str = "abcdefg";
+        str = str.split("").reverse().join("");
+        console.log(str);
+        
+        // 封装一个函数  对字符串统计 小写字母个数 大写字母个数 数字字符个数 其他字符个数
+        function fnCount(str) {
+            var small = 0, big = 0, num = 0, other = 0;
+            // 字符串每个字符拿到
+            for(var i=0; i<str.length; i++) {
+                var ch = str.charAt(i);
+                // 对ch判断
+                if( ch>='a' && ch<='z') {
+                    small++;
+                } else if( ch>='A' && ch<='Z') {
+                    big++;
+                } else if( ch>='0' && ch<='9') {
+                    num++;
+                } else {
+                    other++;
+                }
+            }
+            console.log(small,big,num,other);
+         }
+
+         fnCount("hjaty56FFkjd.j./88");
+
+         // 点击验证按钮 对用户输入的qq进行判断
+         /*
+            1 有没有输入 没有输入 弹窗 不能为空
+            2 输入的是不是数字
+            3 不能是0开头
+            4 不能是小数
+            5 qq号位数 5-10
+         */
+        var btn = document.getElementById("btn");
+        var qq = document.getElementById("qq");
+        console.dir(qq);
+        btn.onclick = function() {
+            // 1 拿到用户输入的值
+            var val = qq.value.trim();
+            if(val === "") {
+                alert("不能为空");
+            } else if (isNaN(val)) {
+                alert("必须是数字");
+            } else if(val.charAt(0) === "0") {
+                alert("第一位不能为0");
+            } else if (val.indexOf(".") != -1) {
+                alert("不能是小数");
+            } else if(val.length<5 || val.length>10) {
+                alert("输入数字位数必须是5-10位");
+            } else {
+                alert("success");
+            }
+            
+        }  
+    </script>
+</body>
+</html>
