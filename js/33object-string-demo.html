@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
+    QQ: <input type="text" id="qq"/>
+    <button id="btn">验证</button>
     <script>
         // 1 "http://www.baidu.com?uname=zs&age=22"  如何获取uname和age
         // 2 "abcdefg" => "gfedcba"  先数组 
@@ -22,7 +24,7 @@
         str = str.split("").reverse().join("");
         console.log(str);
         
-        // 封装一个函数  对字符串统计 小写字母个数 大写字母个数 数字字符个数 其他字符个数
+        // 3封装一个函数  对字符串统计 小写字母个数 大写字母个数 数字字符个数 其他字符个数
         function fnCount(str) {
             var small = 0, big = 0, num = 0, other = 0;
             // 字符串每个字符拿到
@@ -54,13 +56,16 @@
          */
         var btn = document.getElementById("btn");
         var qq = document.getElementById("qq");
-        console.dir(qq);
-        btn.onclick = function() {
+
+        //console.log(qq);
+        console.dir(qq); // dir 详细展开
+        btn.onclick = function() { //事件处理函数  单击事件 另一种函数调用方式
             // 1 拿到用户输入的值
-            var val = qq.value.trim();
+            // 通过dome 的api这种方法找元素 找到的dome元素 dome元素本质上也是一个对象 它里面也有属性 方法
+            var val = qq.value.trim(); // 文本框获取的内容为字符串
             if(val === "") {
                 alert("不能为空");
-            } else if (isNaN(val)) {
+            } else if (isNaN(val)) { // isNaN 若为纯数字字符串，会自动转为数组 如："123" flase
                 alert("必须是数字");
             } else if(val.charAt(0) === "0") {
                 alert("第一位不能为0");

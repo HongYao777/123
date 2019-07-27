@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // es6 模板字符串
+        var uname = "along", age = 32;
+        //var str = uname + ",今年" + age +  "岁"; // along,今年32岁  某些地方不能换行 换行报错
+        var str = `${uname},今年${age}岁`; // `` 反单引号  变量用 ${} 替代 能换行
+        // 字符串拼接  用模板字符串方便  实现原理 正则
+        console.log(str);
+
+
+        //function desc(strings,values,values2) {
+        function desc(strings, ...values) {
+            console.log(strings, values); // 剩余参数  (3) ["", ",今年", "岁", raw: Array(3)] (2) ["along", 32]
+            //console.log(strings,values,values2); //(3) ["", ",今年", "岁", raw: Array(3)] (2) ["along", 32]
+            //console.log(strings instanceof Array,values); // true strings是数组
+            var str = "";
+            values.forEach((item, index) => {
+                if (index == 1) {
+                    item = item + 1;
+                }
+                str += `${strings[index]}${item}`; // along,今年33岁
+                //str += `${item}${strings[index]}`; // along33,今年岁
+            });
+            str += `${strings[strings.length - 1]}`;
+            console.log(str);
+        }
+
+        // 带标签的模板字符串
+        desc`${uname},今年${age}岁`; // 标签其实是一个函数
+
+        // includes()  startsWith()  endsWith()
+        var str2 = "wekdoio";
+        console.log(str2.includes("e"));
+        console.log(str2.startsWith("we"));
+        console.log(str2.endsWith("we"));
+
+        
+    </script>
+</body>
+
+</html>
