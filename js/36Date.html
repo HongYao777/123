@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Date 日期时间
+        var d = new Date(); // 通过new 创建一个日期对象
+        // var d = new Array();
+        // var d = new String();
+
+        // console.log(d); // 相当于console.log(d.toString); 默认转化成字符串形式
+        // console.dir(d); // 详细输出
+        console.log(d.getFullYear()); // 年
+        console.log(d.getMonth()); // 0-11  0表示一月份
+        console.log(d.getDate()); // 日
+        console.log(d.getDay()); // 星期 0-6  0表示周日
+        console.log(d.getHours(),d.getMinutes(),d.getSeconds()); // 时，分，秒
+        
+        // 2019年06月11日  20：23：41 星期二
+        
+        // console.log(d.toLocaleString()); // 转化成本地语言系统时间
+        
+        function dateToString(d) {
+            var year = d.getFullYear();
+            var month = toTwo(d.getMonth() + 1);
+            var day = toTwo(d.getDate());
+            var h = toTwo(d.getHours());
+            var m = toTwo(d.getMinutes());
+            var s = toTwo(d.getSeconds());
+            var arr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+            var weekday = arr[d.getDay()];
+            var str = `${year}年${month}月${day}日${h}:${m}:${s}${weekday}`;
+            return str;
+        }
+        
+        function toTwo(v) {
+            return v<10?'0'+v:v; // 小于10 用0补位
+        }
+
+        console.log(dateToString(d)); // 2019年07月28日17:55:50星期日
+        
+        
+        
+        
+    </script>
+</body>
+</html>

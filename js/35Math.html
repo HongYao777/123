@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Math.ceil() 向上取整
+        console.log(Math.ceil(10.0001)); //11
+        console.log(Math.ceil(10.9)); // 11
+        console.log(Math.ceil(-10.9)); // -10
+
+        // Math.floor() 向下取整
+        console.log(Math.floor(10.001)); // 10
+        console.log(Math.floor(10.9)); // 10
+        console.log(Math.floor(-10.9)); // -11
+
+        // Math.round() 四舍五入
+        console.log(Math.round(0.9)); // 1
+        console.log(Math.round(-0.9)); // -1
+        console.log(Math.round(-3.6));  // -4
+        // 特殊  对于0.5，该方法将进行上舍入
+        console.log(Math.round(3.5)); // 4
+        console.log(Math.round(-3.5)); // -3 
+
+        console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        
+        // Math.random() 产生[0,1)之间的随机数
+        for (var i = 0; i < 100; i++) {
+            //console.log(Math.random()); // [0,1)
+            //console.log(Math.round(Math.random())); //[0,1]整数
+            //console.log(Math.round(Math.random()*10)); // [0,10]整数
+            console.log(Math.round(Math.random()*5+5)); // [5,10]整数   
+        }
+
+
+        console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        // 封装一个函数 产生某个区间的随机数
+        /*
+            0<=Math.random()*(max-min)<max-min
+            min<=Math.random()*(max-min)+min<max
+        */
+        function rand(min,max) {
+            return Math.round(Math.random()*(max-min)+min);
+        }
+
+        function rand2(min,max) {
+            return Math.ceil(Math.random()*(max-min)+min);
+
+        }
+
+        function rand3(min,max) {
+            return Math.floor(Math.random()*(max-min+1)+min);
+            // min<=Math.random()*(max-min+1)+min<max+1
+
+        }
+        for (var i = 0; i < 10; i++) {
+            console.log(rand3(1,7));
+                   
+        }
+
+    </script>
+</body>
+</html>
