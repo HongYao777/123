@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "2000/12/12"; // Tue Dec 12 2000 00:00:00 GMT+0800 (中国标准时间)
+        // var str = "2000-12-12";  // Tue Dec 12 2000 08:00:00 GMT+0800 (中国标准时间)
+        var d = new Date(); // 默认系统时间
+        // 字符串转成日期格式
+        var d1 = new Date(str);
+        console.log(d1.getMonth()); // 11 12月
+        console.log(d1.getHours(),d1.getMinutes());
+        console.dir(d1);
+
+        var num = Date.parse(str); 
+        // 时间戳  从1970年1月1日 00:00:00到目标时间的毫秒数 
+        // console.log(num); // 976550400000
+        var d2 = new Date(num);
+        console.log(d2.toLocaleDateString()); // '2000/12/12'
+         
+        // 可以封装成函数
+        function stringToDate(str) {
+            return new Date(str);
+        }
+
+         // 10天后的日期
+         d.setDate(d.getDate()+10);
+         console.log(d);
+
+            //用时间戳方法实现
+        console.log(d.getTime()); 
+        // 时间戳  从1970年1月1日 00:00:00到当前时间的毫秒数 
+        d = new Date(d.getTime()+10*24*3600*1000);
+        console.log(d);
+
+            // 时间戳应用  当前时间到目标时间的天数
+        var d = new Date();
+        var d2 = new Date("2019/10/1");
+        function diff(start,end) {
+            return (end.getTime() - start.getTime())/1000;
+        }
+        var days = parseInt(diff(d,d2)/24/3600);
+        console.log(days);
+        
+        
+         
+        
+    </script>
+</body>
+</html>
