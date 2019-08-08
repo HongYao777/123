@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1 对象的结构赋值
+
+        // 对象---数组 函数 日期 数学 字符串 DOM元素 正则表达式
+        var obj = {name2:"along",age:32};
+        // var {name,age} = obj;
+
+        // 旧名字(右边对象的属性名)：新名字  
+        // 有新命名时，访问必须使用新名字，否则报错 (但由于用name命名旧名较特殊，有新名仍用旧名name也不会报错)
+        var {name2:userName,age:userAge} = obj;
+        console.log(userName);
+        
+        function ajax(method="get",data={}) {
+            console.log(method,data);
+        }
+        
+        /*
+        // 以前做法
+        function ajax(options) {
+            var method = options.method || "get";
+            var data = options.data || {};
+        }
+        */
+          ajax({
+              // method:"post", // 当该行为空才付给其默认值
+              data: {}
+          });
+
+          function fn(a=10,b=20) {    
+          }
+
+          // 2 对象属性或方法简写
+          var name = "along";
+          var age = 32;
+          var teacher = {
+              name:name, // name:"along"
+              age:age,
+              teach:function() {
+                  console.log("hard working");
+                  
+              }
+          };
+
+          // 简写
+          var teacher2 = {
+              name, // name:"along"
+              age,
+              teach(){
+                  console.log(arguments); // 不是箭头函数，箭头函数无arguments
+                  console.log("hard working");
+              }
+          };
+          console.log(teacher2.name,teacher2.age);
+          teacher2.teach();
+          
+
+          // 3 新增api
+          // Object.is()  比较是否相等
+          console.log(NaN === NaN);  // false
+          console.log(+0 === -0); // true
+
+          // 应用:去重 [NaN,19,NaN]
+          console.log(Object.is(NaN,NaN)); // true
+          console.log(Object.is(+0,-0)); // false 
+          
+          // Object.assign() 对象合并
+          var obj1 = {x:10,y:20};
+          var obj2 = {z:30};
+          Object.assign(obj2,obj1);
+          console.log(obj2); // {z: 30, x: 10, y: 20}
+          console.log(obj1); // {x: 10, y: 20}
+          // 应用：对象克隆 浅层复制
+          function clone(obj) {
+              return Object.assign({},obj);
+          }
+          var obj3 = {a:10,b:{num:100}};
+          var obj4 = clone(obj3);
+          obj4.b.num = 200;
+          console.log(obj3.b.num);
+          
+          var obj5 = {};
+          for(var key in obj3) {
+              obj5[key] = obj3[key];
+          };
+          console.log(obj5);
+
+          // Object.keys()   Object.values()
+          var object = {a:1,b:2,c:3};
+          console.log(Object.keys(object)); // ["a", "b", "c"]
+          console.log(Object.values(object)); // [1, 2, 3] 
+          
+          // for of
+          for(var v of Object.keys([1,2,3])) {
+              console.log(v); //  0 1 2
+              
+          }
+
+          // 原型 super 第三季
+          
+
+          
+          
+          
+    </script>
+</body>
+</html>
