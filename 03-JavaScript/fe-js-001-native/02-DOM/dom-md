@@ -1,0 +1,30 @@
+## Dom
+Document object model 文档对象模型
+Dom树 
+
+            window
+            document
+             html(节点，元素节点)
+               |
+       head        body   
+         |          |
+      meta title   div
+                    |
+                    ul
+                    |
+                   li li li  
+   在js世界中，把dom树的每个元素都看成一个对象，对象就有属性和方法                
+   dom学什么  dom节点操作 查找元素 元素增删改查 样式操作 事件绑定等
+## 事件
+    三要素 1 事件源 谁身上发生了事件  2 事件  具体的行为 如单击、鼠标悬停、键盘按下...
+          3 事件处理 事件发生后导致什么结果 
+    唐三藏念紧箍咒  打开电灯
+    js程序如何处理事件
+##  获取页面元素
+    document.getElementById("**");    
+    document.getElementsByTagName("p");
+    document.getElementByName()
+    document.getElementByClassName()
+
+    document.querySelector()
+    document.querySelectorAll()
