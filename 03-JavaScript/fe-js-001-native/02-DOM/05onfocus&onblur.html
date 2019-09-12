@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="请输入内容" id="txt" />
+    <span></span>
+    <script>
+        var txt = document.getElementById("txt");
+        txt.onfocus = function() {
+            if(this.value === "请输入内容") {
+                this.value = "";
+            }    
+        }
+        txt.onblur = function() {
+            if(this.value === "") {
+                this.value = "请输入内容";
+            }
+        }
+       
+        /*
+        document.getElementsByTagName("span")[0].innerHTML = "haha";
+        document.getElementsByTagName("span")[0].style.color = ""
+        */
+        // 作业
+        /*
+          1 获取焦点 清空信息
+          2 失去焦点 
+              假如为空 提示不能为空
+              假如非数字 提示不合法
+              假如长度小于6 提示长度不够
+              假如是数字 提示正确        
+        
+        */
+    </script>
+</body>
+</html>

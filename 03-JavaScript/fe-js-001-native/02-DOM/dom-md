@@ -22,9 +22,10 @@ Dom树
     js程序如何处理事件
 ##  获取页面元素
     document.getElementById("**");    
-    document.getElementsByTagName("p");
+    document.getElementsByTagName("p"); 前两个最常用，无兼容性问题
     document.getElementByName()
     document.getElementByClassName()
 
+    H5新增
     document.querySelector()
     document.querySelectorAll()

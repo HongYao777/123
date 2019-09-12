@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // onload 页面加载事件---页面加载完成执行
+        window.onload = function () {  // window可以省略
+            // 单击按钮  弹出“学号js  走遍天下都不怕”
+            // 函数目前调用方式   1 函数名()  2 触发事件调用函数
+            /*
+                事件源.事件 = 事件处理函数
+                当时间发生后  事件处理函数才执行
+            */
+            // 1 找到事件源
+            var btn = document.getElementById("btn");
+            // 2 注册事件  onclick单击
+            btn.onclick = function () {
+                alert("学号js 走遍天下都不怕！！！");
+            }
+        }
+
+        // 因此 建议将script脚本放在末尾，由于代码顺序执行原因可能报错，若一定要放在前面，使用onload
+    </script>
+</head>
+
+<body>
+    <button id="btn">点我</button>
+
+</body>
+
+</html>

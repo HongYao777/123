@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 简写:ul>li*5 -->
+    <ul>  
+        <!--<li onmouseover="this.style.backgroundColor = 'green'" onmouseout="out(this)">aaaaa</li>  
+        本例中使用嵌套式script,此处为行内式，不需要使用函数，常见于后端写法-->
+        <li>aaaaa</li>
+        <li>bbbbb</li>
+        <li>ccccc</li>
+        <li>ddddd</li>
+        <li>eeeee</li>
+        <script>
+            /*function over(obj) {
+                obj.style.backgroundColor = "green";
+            }
+            function out(obj) {
+                obj.style.backgroundColor = "";
+            }
+            */
+            // 隔行变色和高亮显示
+            var lis = document.getElementsByTagName("li");
+            var color = ""; //
+            // 循环设置每个li颜色
+            for (var i = 0; i < lis.length; i++) {
+                if(i%2===0){
+                    lis[i].style.backgroundColor = "yellow"; // 行内样式 优先级较高 相当于在li中写Style 
+                }else{
+                    lis[i].style.backgroundColor = "skyblue";
+                }  
+                // 给每个li注册事件
+                lis[i].onmouseover = function () {
+                    color = this.style.backgroundColor;
+                    // 让当前li背景色变白
+                    this.style.backgroundColor = "white";
+                }
+
+                lis[i].onmouseout = function () {
+                    // 鼠标离开 让当前li背景色还原
+                    this.style.backgroundColor = color;
+                }
+            }
+        </script>
+    </ul>
+</body>
+</html>
